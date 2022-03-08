@@ -1,0 +1,17 @@
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  margin: auto;
+}
+.form-field {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form {
+  width: 440px;
+  margin: auto;
+}
+.bs {
+  box-shadow: 0px 1px 6px 0px black;
+}

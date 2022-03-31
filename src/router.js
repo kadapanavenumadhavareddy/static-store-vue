@@ -1,38 +1,32 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import SignUp from "./Pages/SignUp.vue";
-import Login from "./Pages/LoginPage.vue";
-import HomePage from "./Pages/HomePage.vue";
-import ProductDetails from "./components/ProductDetails.vue";
-import Checkoutpage from "./Pages/CheckoutPage.vue";
-import PageNotFound from "./Pages/PageNotFound.vue";
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
       path: "/login",
-      component: Login,
+      component: () => import("./Pages/LoginPage.vue"),
     },
     {
       path: "/signup",
-      component: SignUp,
+      component: () => import("./Pages/SignUp.vue"),
     },
     {
       path: "/",
-      component: HomePage,
+      component: () => import("./Pages/HomePage.vue"),
     },
     {
       path: "/productdetails",
       name: "productdetail",
-      component: ProductDetails,
+      component: () => import("./components/ProductDetails.vue"),
       props: true,
     },
     {
       path: "/checkoutpage",
-      component: Checkoutpage,
+      component: () => import("./Pages/CheckoutPage.vue"),
     },
     {
       path: "/:pathMatch(.*)",
-      component: PageNotFound,
+      component: () => import("./Pages/PageNotFound.vue"),
     },
   ],
 });

@@ -3,8 +3,14 @@ import store from "./store";
 import router from "./router";
 import App from "./App.vue";
 import "./css/style.css";
-
+import PrimeVue from "primevue/config";
+import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
+import "primevue/resources/themes/saga-blue/theme.css";
+import BadgeDirective from "primevue/badgedirective";
 const app = createApp(App);
 app.use(store);
 app.use(router);
+app.use(PrimeVue);
+app.directive("badge", BadgeDirective);
 app.mount("#app");

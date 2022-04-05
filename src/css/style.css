@@ -15,3 +15,36 @@
 .bs {
   box-shadow: 0px 1px 6px 0px black;
 }
+/* Login and sign-up */
+.form {
+  padding: 40px;
+  margin: 20px auto;
+}
+.large {
+  width: 420px;
+}
+.small {
+  width: 200px;
+}
+
+.form-enter-active,
+.form-leave-active {
+  animation: name 2s;
+}
+
+.form-enter-from,
+.form-leave-to {
+  opacity: 0;
+}
+.form-leave-active {
+  position: absolute;
+}
+@keyframes name {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+

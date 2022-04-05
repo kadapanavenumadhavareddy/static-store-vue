@@ -32,7 +32,7 @@ export default {
 <style scoped>
 p.half-color:before {
   content: attr(attribute);
-  color: #101010;
+  color: rgb(218, 218, 45);
   position: absolute;
   top: 0;
   left: 0;
@@ -46,5 +46,11 @@ p.half-color {
 }
 .rating {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+p {
+  color: rgb(218, 218, 45);
+  font-size: 25px;
 }
 </style>

@@ -10,13 +10,13 @@
         <option value="women's clothing">women's clothing</option>
       </select>
     </div>
-    <div class="product-page">
+    <section class="product-page">
       <ProductTemplate
-        v-for="product in products"
-        :key="product"
+        v-for="(product, index) in products"
+        :key="index"
         :product="product"
       ></ProductTemplate>
-    </div>
+    </section>
   </div>
 </template>
 <script>
@@ -39,11 +39,15 @@ export default {
   },
 
   methods: {
-    select(e) {
+    async select(e) {
       this.products =
-        e.target.value == "All"
+        (await e.target.value) == "All"
           ? this.productsfromstore
-          : this.cat(e.target.value);
+          : this.productsfromstore.filter((value) => {
+              if (value.category == e.target.value) {
+                return value;
+              }
+            });
     },
   },
   mounted() {
@@ -63,5 +67,23 @@ label {
   display: flex;
   width: max-content;
   margin: 0px 20% 0px auto;
+}
+.v-move,
+.v-enter-active,
+.v-leave-active {
+  animation: name 1s;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+.v-leave-active {
+  position: absolute;
+}
+@keyframes name {
+  0% {
+    transform: scale(0);
+  }
 }
 </style>

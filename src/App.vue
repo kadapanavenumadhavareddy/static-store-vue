@@ -5,9 +5,9 @@
       <li><router-link to="/signup" class="log">Sigup</router-link></li>
       <li><router-link to="/" class="log">Home</router-link></li>
       <li>
-        <router-link to="/checkoutpage" class="log"
-          >cart<span>{{ length }}</span></router-link
-        >
+        <router-link to="/checkoutpage" class="log">
+          <i class="pi pi-shopping-cart" v-badge.success="length"></i
+        ></router-link>
       </li>
     </ul>
   </header>
@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style>
+* {
+  padding: 0px;
+  margin: 0px;
+}
 header {
   width: 100%;
   height: 50px;
@@ -49,5 +53,8 @@ span {
   border-radius: 50%;
   margin-left: 10px;
   color: rgb(55, 121, 243);
+}
+.pi.pi.pi-shopping-cart {
+  font-size: 1.5rem;
 }
 </style>
